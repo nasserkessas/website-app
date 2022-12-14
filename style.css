@@ -1,5 +1,6 @@
 :root {
-    --accent-colour: #6EB6C0
+    --accent-colour: #6EB6C0;
+    --bg: #d5d5d5;
 }
 
 body {
@@ -7,23 +8,26 @@ body {
     padding: 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    overflow-y: scroll; 
+    overflow-y: scroll;
+    background-color: var(--bg);
 }
+
 body::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
+    display: none;
+    /* for Chrome, Safari, and Opera */
 }
 
 .navbar {
     position: absolute;
     top: 20%;
     right: 0%;
-    width: 35%;
     height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--accent-colour);
     border-radius: 15px 0 0 15px;
+    min-width: 200px;
 }
 
 .link {
@@ -33,6 +37,7 @@ body::-webkit-scrollbar {
     font-weight: 600;
     font-size: 19px;
     transition: all 0.2s;
+    margin: 30px
 }
 
 .link:hover {
@@ -40,14 +45,23 @@ body::-webkit-scrollbar {
 }
 
 .footer {
-    border: 1px solid #000;
     height: 64px;
+    background-color: var(--accent-colour);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 .header-img {
     width: 100vw;
     height: 100vh;
     clip-path: polygon(0% 0, 0% 100%, 100% 80%, 100% 0%);
+    overflow-y: scroll;
+}
+
+.header-img-small {
+    width: 100vw;
+    height: 65vh;
     overflow-y: scroll;
 }
 
@@ -74,12 +88,12 @@ body::-webkit-scrollbar {
 
 .content {
     width: 1200px;
-    margin: 20px auto 0px auto;
+    margin: 50px auto 0px auto;
 }
 
 .heading {
     font-family: JetBrains Mono;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 500;
 }
 
@@ -93,7 +107,41 @@ li>span {
     content: '';
     display: inline-block;
     width: 10px;
-    height: 35px;
+    height: 40px;
     border-radius: 4px;
     background: var(--accent-colour);
+}
+
+.footer-link {
+    font-family: Montserrat;
+    color: #000;
+    margin-right: 20px;
+    font-size: 17px;
+}
+
+.title-small {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    z-index: 10;
+    display: block;
+    font-family: Noto Sans;
+    font-size: 60px;
+    color: #f6f6f6;
+}
+
+.footer-links, .footer-icons{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-icon {
+    width: 36px;
+    height: 36px;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
 }
