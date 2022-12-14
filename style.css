@@ -50,6 +50,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    padding: 0 30px;
 }
 
 .header-img {
@@ -117,6 +118,11 @@ li>span {
     color: #000;
     margin-right: 20px;
     font-size: 17px;
+    transition: all 0.2s;
+}
+
+.footer-link:hover {
+    font-size: 18px;
 }
 
 .title-small {
@@ -133,7 +139,6 @@ li>span {
 .footer-links, .footer-icons{
     display: flex;
     align-items: center;
-    padding: 0 20px;
 }
 
 .footer-icon {
