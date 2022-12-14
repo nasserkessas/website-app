@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -9,28 +10,47 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nasser Kessas</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <section>
-        <img class="header-img" src="assets/code.png">
+        <a id="home">
+            <img class="header-img" src="assets/code.png">
+        </a>
         <header class="navbar">
-            <!-- <Link class="link" to={"/"}>Home</Link>
-            <Link class="link" to={"/about"}>About</Link>
-            <Link class="link" to={"/portfolio"}>Portfolio</Link>
-            <Link class="link" to={"/contact"}>Contact</Link> -->
+            <a class="link" href="#home">Home</a>
+            <a class="link" href="#about" }>About</a>
+            <a class="link" href="#portfolio" }>Portfolio</a>
+            <a class="link" href="#contact" }>Contact</a>
         </header>
-        <div class="title">
-            <div class="name">Nasser Kessas</div>
-            <div class="description">Computer Man</div>
-        </div>
+            <div class="title">
+                <div class="name">Nasser Kessas</div>
+                <div class="description">Computer Man</div>
+            </div>
     </section>
-    <section>
-        Main
-    </section>
+
+    <ul class="content">
+        <li id="about">
+            <span></span>
+            <div class="heading">About Me</div>
+        </li>
+
+        <li id="portfolio">
+            <span></span>
+            <div class="heading">Portfolio</div>
+        </li>
+
+        <li id="contact">
+            <span></span>
+            <div class="heading">Contact</div>
+        </li>
+    </ul>
+
     <footer class="footer">
-        <p>&copy; Nasser Kessas<span id="year">2022</span></p>
+        <p>&copy; Nasser Kessas <span id="year">2022</span></p>
     </footer>
 
     <script type="module" src="/main.js"></script>
-  </body>
+</body>
+
 </html>

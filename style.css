@@ -71,3 +71,29 @@ body::-webkit-scrollbar {
     font-size: 27px;
     color: #6EB6C0;
 }
+
+.content {
+    width: 1200px;
+    margin: 20px auto 0px auto;
+}
+
+.heading {
+    font-family: JetBrains Mono;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+li>span {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 35px;
+    border-radius: 4px;
+    background: var(--accent-colour);
+}
