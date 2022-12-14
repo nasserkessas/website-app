@@ -1,3 +1,18 @@
+:root {
+    --accent-colour: #6EB6C0
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll; 
+}
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
 .navbar {
     position: absolute;
     top: 20%;
