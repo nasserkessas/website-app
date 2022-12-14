@@ -1,0 +1,58 @@
+.navbar {
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    width: 35%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--accent-colour);
+    border-radius: 15px 0 0 15px;
+}
+
+.link {
+    font-family: Inter;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 19px;
+    transition: all 0.2s;
+}
+
+.link:hover {
+    font-size: 20px;
+}
+
+.footer {
+    border: 1px solid #000;
+    height: 64px;
+}
+
+.header-img {
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0% 0, 0% 100%, 100% 80%, 100% 0%);
+    overflow-y: scroll;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    z-index: 10;
+    display: block;
+}
+
+.title>.name {
+    font-family: Noto Sans;
+    font-size: 82px;
+    color: #f6f6f6;
+}
+
+.title>.description {
+    font-family: JetBrains Mono;
+    font-style: italic;
+    font-size: 27px;
+    color: #6EB6C0;
+}
