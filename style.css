@@ -34,7 +34,6 @@ body::-webkit-scrollbar {
     font-family: Inter;
     text-decoration: none;
     color: #000;
-    font-weight: 600;
     font-size: 19px;
     transition: all 0.2s;
     margin: 30px
