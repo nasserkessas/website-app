@@ -35,12 +35,35 @@
             <span></span>
             <div class="heading">About Me</div>
         </li>
-        <section>
-            <div>Coding for <span id="years"></span> years</div>
-            <div>Coding for <span id="hours"></span> hours this week</div>
-            <div><span id="repos"></span> Repositories</div>
+        <section class="stat-counters">
+            <div class="stat-box"><img class="stat-icon" src="./assets/clock.svg"><span class="counter"
+                    id="hours"></span>
+                <div class="stat-description">Hours coding this week</div>
+            </div>
+            <div class="stat-box"><img class="stat-icon" src="./assets/visualstudiocode.svg"><span class="counter"
+                    id="years"></span>
+                <div class="stat-description">Years of coding</div>
+            </div>
+            <div class="stat-box"><img class="stat-icon" src="./assets/github.svg"><span class="counter"
+                    id="repos"></span>
+                <div class="stat-description">Repositories</div>
+            </div>
         </section>
+    </ul>
+    <section class="bg-dark">
+        <section class="content">
+            <ul>
+                <li id="about" class="text-light">
+                    <span></span>
+                    <div class="heading">Languages</div>
+                </li>
+            </ul>
+            <section class="langs" id="langs">
+            </section>
+        </section>
+    </section>
 
+    <ul class="content">
         <li id="portfolio">
             <span></span>
             <div class="heading">Portfolio</div>

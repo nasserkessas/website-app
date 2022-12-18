@@ -1,6 +1,8 @@
 :root {
     --accent-colour: #6EB6C0;
-    --bg: #d5d5d5;
+    --accent-colour-light: #DDEBED;
+    --colour-dark: #333637;
+    --bg: #f9f9f9;
 }
 
 body {
@@ -19,9 +21,9 @@ body::-webkit-scrollbar {
 
 .navbar {
     position: absolute;
-    top: 20%;
+    top: 10%;
     right: 0%;
-    height: 65px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -34,13 +36,13 @@ body::-webkit-scrollbar {
     font-family: Inter;
     text-decoration: none;
     color: #000;
-    font-size: 19px;
+    font-size: 16px;
     transition: all 0.2s;
-    margin: 30px
+    margin: 20px
 }
 
 .link:hover {
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .footer {
@@ -76,7 +78,7 @@ body::-webkit-scrollbar {
 .title>.name {
     font-family: Noto Sans;
     font-size: 82px;
-    color: #f6f6f6;
+    color: #fff;
 }
 
 .title>.description {
@@ -88,13 +90,18 @@ body::-webkit-scrollbar {
 
 .content {
     width: 1200px;
-    margin: 50px auto 0px auto;
+    margin: 50px auto;
+}
+
+ul {
+    padding: 0;
 }
 
 .heading {
     font-family: JetBrains Mono;
     font-size: 32px;
     font-weight: 500;
+    margin-left: 7px;
 }
 
 li {
@@ -135,7 +142,8 @@ li>span {
     color: #f6f6f6;
 }
 
-.footer-links, .footer-icons{
+.footer-links,
+.footer-icons {
     display: flex;
     align-items: center;
 }
@@ -148,4 +156,115 @@ li>span {
 
 a {
     text-decoration: none;
+}
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.counter {
+    counter-reset: num var(--tonum);
+    font: 400 50px Montserrat;
+}
+
+.counter::after {
+    content: counter(num);
+}
+
+.zero {
+    counter-reset: num var(--num);
+}
+
+.animate {
+    animation: counter 1.5s forwards cubic-bezier(0, 0, 0.5, 1) 0.5s;
+}
+
+@keyframes counter {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--tonum);
+    }
+}
+
+.stat-counters {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-box {
+    background-color: var(--accent-colour-light);
+    border-radius: 18px;
+    width: 240px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.stat-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width:32px;
+    height: 32px;
+}
+
+.stat-description {
+    font: 400 15px Montserrat;
+}
+
+.bg-dark {
+    background-color: var(--colour-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.text-light {
+    color: #fff;
+}
+
+.langs {
+    margin-top: 40px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: column;
+    column-gap: 15%;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.lang-label {
+    font: 400 19px Montserrat;
+    color: #fff;
+}
+
+.lang-box-percent {
+    font: 400 16px Montserrat;
+    text-align: center;
+}
+
+.lang-box-full {
+    width: 350px;
+    height: 22px;
+    background-color: rgba(110, 182, 192, 0.2);
+}
+
+.lang-box {
+    width: 0;
+    background-color: var(--accent-colour);
+    height: 22px;
+    transition: all 1.5s;
 }
