@@ -213,7 +213,7 @@ a {
     position: absolute;
     top: 20px;
     left: 20px;
-    width:32px;
+    width: 32px;
     height: 32px;
 }
 
@@ -267,4 +267,46 @@ a {
     background-color: var(--accent-colour);
     height: 22px;
     transition: all 1.5s;
+}
+
+.carousel {
+    position: absolute;
+    left: 50%;
+    margin-left: -350px;
+    width: 700px;
+    height: 450px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.carousel>li {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    opacity: 1;
+    transition: 1s transform;
+    transition-duration: 1s;
+}
+
+.start {
+    transform: translateX(700px);
+    /* display: none; */
+}
+
+.active {
+    opacity: 1;
+    z-index: 5;
+}
+
+.end {
+    transform: translateX(-700px);
+    opacity: 1;
+}
+
+.carousel_section {
+    position: relative;
+    width: 700px;
+    border: 1px solid #000;
+    height: 450px;
 }

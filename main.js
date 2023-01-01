@@ -99,6 +99,26 @@ let counter_observer = new IntersectionObserver((entries, observer) => {
     });
 }, counter_options);
 
-targets.forEach.call(targets, (target)=>{
+targets.forEach.call(targets, (target) => {
     counter_observer.observe(target);
 });
+
+
+let delay = 3000;
+let pic = 1;
+
+document.getElementById(pic).className = "active";
+console.log(`Setting pic ${pic} to active`)
+setInterval(() => {
+    console.log(`Setting pic ${pic} to end`)
+    document.getElementById(pic).className = "end";
+    let oldpic = pic;
+    setTimeout(() => { console.log(`Setting pic ${oldpic} to start`); document.getElementById(oldpic).className = "start"; }, 1000)
+
+    if (pic < 5) pic++;
+    else pic = 1;
+
+    document.getElementById(pic).className = "active";
+    console.log(`Setting pic ${pic} to active`)
+
+}, delay)
