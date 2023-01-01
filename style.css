@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 10%;
     right: 0%;
-    height: 55px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -36,17 +36,17 @@ body::-webkit-scrollbar {
     font-family: Inter;
     text-decoration: none;
     color: #000;
-    font-size: 16px;
+    font-size: 19px;
     transition: all 0.2s;
     margin: 20px
 }
 
 .link:hover {
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .footer {
-    height: 64px;
+    height: 72px;
     background-color: var(--accent-colour);
     display: flex;
     justify-content: space-between;
@@ -90,7 +90,7 @@ body::-webkit-scrollbar {
 
 .content {
     width: 1200px;
-    margin: 50px auto;
+    margin: 70px auto;
 }
 
 ul {
@@ -123,12 +123,12 @@ li>span {
     font-family: Montserrat;
     color: #000;
     margin-right: 20px;
-    font-size: 17px;
+    font-size: 18px;
     transition: all 0.2s;
 }
 
 .footer-link:hover {
-    font-size: 18px;
+    font-size: 19px;
 }
 
 .title-small {
@@ -149,8 +149,8 @@ li>span {
 }
 
 .footer-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     margin-left: 20px;
 }
 
