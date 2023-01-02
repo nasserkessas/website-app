@@ -104,7 +104,7 @@ targets.forEach.call(targets, (target) => {
 });
 
 
-let delay = 3000;
+let delay = 5000;
 let pic = 1;
 
 document.getElementById(pic).className = "active";
@@ -115,7 +115,7 @@ setInterval(() => {
     let oldpic = pic;
     setTimeout(() => { console.log(`Setting pic ${oldpic} to start`); document.getElementById(oldpic).className = "start"; }, 1000)
 
-    if (pic < 5) pic++;
+    if (pic < 7) pic++;
     else pic = 1;
 
     document.getElementById(pic).className = "active";
