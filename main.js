@@ -9,9 +9,11 @@ const getData = async () => {
     try {
         const res = await axios.get("http://localhost:3000/"); //(process.env.API_URL || "http://localhost:3000/");\
 
-        let years_coding = new Date().getFullYear() - 2016;
+        // let years_coding = new Date().getFullYear() - 2016;
 
-        $("#years").get(0).style.setProperty('--tonum', years_coding)
+        // $("#years").get(0).style.setProperty('--tonum', years_coding)
+
+        $("#rep").get(0).style.setProperty('--tonum', res.data.stats.reputation)
 
         $("#repos").get(0).style.setProperty('--tonum', res.data.stats.repos.repoCount)
 
