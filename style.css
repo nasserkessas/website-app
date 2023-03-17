@@ -311,3 +311,19 @@ a {
     height: 450px;
     margin: 30px 0;
 }
+
+.parallax {
+    background-image: url("./assets/parallax.jpg");
+
+    background-size: cover;
+
+    /* Set a specific height */
+    min-height: 70vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
