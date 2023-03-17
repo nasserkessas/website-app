@@ -3,11 +3,16 @@
 
 import axios from 'axios'
 import $ from "jquery";
+
 // TODO: Change HTTP requests to use Jquery
+
+/**
+ * DATA FETCHING
+ */
 
 const getData = async () => {
     try {
-        const res = await axios.get("http://localhost:3000/"); //(process.env.API_URL || "http://localhost:3000/");\
+        const res = await axios.get("http://localhost:3000/"); //(process.env.API_URL || "http://localhost:3000/");
 
         // let years_coding = new Date().getFullYear() - 2016;
 
@@ -51,8 +56,9 @@ const getData = async () => {
     }
 };
 
-
-// Language bar observers //
+/**
+ * LANGUAGE BAR OBSERVERS
+ */
 
 let [elems, lengths] = await getData();
 
@@ -79,7 +85,9 @@ let bar_observer = new IntersectionObserver((entries, observer) => {
 bar_observer.observe($(`#langs`).get(0));
 
 
-// Stat counter observers //
+/**
+ * STAT COUNTER OBSERVERS
+ */
 
 let targets = $(".counter").get()
 
@@ -106,21 +114,21 @@ targets.forEach.call(targets, (target) => {
 });
 
 
+/**
+ * PORTFOLIO CAROUSEL
+ */
+
 let delay = 5000;
 let pic = 1;
 
 document.getElementById(pic).className = "active";
-console.log(`Setting pic ${pic} to active`)
 setInterval(() => {
-    console.log(`Setting pic ${pic} to end`)
     document.getElementById(pic).className = "end";
     let oldpic = pic;
-    setTimeout(() => { console.log(`Setting pic ${oldpic} to start`); document.getElementById(oldpic).className = "start"; }, 1000)
+    setTimeout(() => { document.getElementById(oldpic).className = "start"; }, 1000)
 
     if (pic < 7) pic++;
     else pic = 1;
 
     document.getElementById(pic).className = "active";
-    console.log(`Setting pic ${pic} to active`)
-
 }, delay)
