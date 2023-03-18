@@ -1,7 +1,5 @@
-// import * as dotenv from 'dotenv'
-// dotenv.config()
-
-import axios from 'axios'
+import config from './config.json' assert { type: 'json' };
+import axios from 'axios';
 import $ from "jquery";
 
 // TODO: Change HTTP requests to use Jquery
@@ -12,7 +10,7 @@ import $ from "jquery";
 
 const getData = async () => {
     try {
-        const res = await axios.get("http://localhost:3000/"); //(process.env.API_URL || "http://localhost:3000/");
+        const res = await axios.get(config["API_URL"]); //(process.env.API_URL || "http://localhost:3000/");
 
         // let years_coding = new Date().getFullYear() - 2016;
 
