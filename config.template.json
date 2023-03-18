@@ -1,4 +1,6 @@
 {
     "API_URL": "",
-    "EMAILJS_PRIVATE_KEY": ""
+    "EMAILJS_PRIVATE_KEY": "",
+    "EMAILJS-SERVICE_ID": "",
+    "EMAILJS-TEMPLATE_ID": ""
 }

@@ -1,4 +1,5 @@
 import config from './config.json' assert { type: 'json' };
+import emailjs from '@emailjs/browser';
 import axios from 'axios';
 import $ from "jquery";
 
@@ -10,7 +11,7 @@ import $ from "jquery";
 
 const getData = async () => {
     try {
-        const res = await axios.get(config["API_URL"]); //(process.env.API_URL || "http://localhost:3000/");
+        const res = await axios.get(config["API_URL"]);
 
         // let years_coding = new Date().getFullYear() - 2016;
 
@@ -130,3 +131,32 @@ setInterval(() => {
 
     document.getElementById(pic).className = "active";
 }, delay)
+
+
+/**
+ * Contact form
+ */
+
+
+document.forms.contact_form.onsubmit = function () {
+
+    let templateParams = {
+        subject: $("input[name=subject]").val(),
+        name: $("input[name=name]").val(),
+        email: $("input[name=email]").val(),
+        message: $("textarea[name=message]").val()
+    }
+    console.log(templateParams);
+    return false;
+    emailjs.send(config["EMAILJS_SERVICE_ID"], config["EMAILJS_TEMPLATE_ID"], templateParams, config["EMAILJS_PUBLIC_KEY"])
+	    .then((response) => {
+	        console.log('SUCCESS!', response.status, response.text);
+	    }, (err) => {
+	        console.log('FAILED...', err);
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+
+    return false;
+};
