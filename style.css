@@ -2,6 +2,7 @@
     --accent-colour: #6EB6C0;
     --accent-colour-light: #DDEBED;
     --colour-dark: #333637;
+    --colour-dark-accent: #444849;
     --bg: #f9f9f9;
 }
 
@@ -12,6 +13,7 @@ body {
     scrollbar-width: none;
     overflow-y: scroll;
     background-color: var(--bg);
+    box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
@@ -38,7 +40,7 @@ body::-webkit-scrollbar {
     color: #000;
     font-size: 17px;
     transition: all 0.2s;
-    margin: 18px
+    margin: 0 18px
 }
 
 .link:hover {
@@ -200,8 +202,8 @@ a {
 .stat-box {
     background-color: var(--accent-colour-light);
     border-radius: 18px;
-    width: 220px;
-    height: 70px;
+    width: 270px;
+    height: 120px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -273,7 +275,7 @@ a {
 .carousel {
     position: absolute;
     left: 50%;
-    margin-left: -350px;
+    margin-left: -450px;
     width: 900px;
     height: 450px;
     overflow: hidden;
@@ -307,7 +309,7 @@ a {
 
 .carousel_section {
     position: relative;
-    width: 900px;
+    width: 100%;
     height: 450px;
     margin: 30px 0;
 }
@@ -326,4 +328,37 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
 
+}
+
+.contact-section {
+    margin: 0 auto;
+}
+
+.contact-form {
+    background-color: var(--accent-colour-mid);
+    max-width: 60vw;
+    flex-grow: 100;
+    display: grid;
+    grid-template-columns: 20px 2fr 20px 2fr 20px;
+    margin: 0 auto;
+}
+
+.span-1 {
+    column-span: 1;
+}
+
+.span-2 {
+    column-span: 2;
+}
+
+.submit {
+    margin: 0 auto;
+    width: 10%;
+    background-color: var(--colour-dark);
+    color: #ffffff;
+}
+
+.submit:hover {
+    background-color: var(--colour-dark-accent);
+    color: #ffffff;
 }
