@@ -362,3 +362,16 @@ a {
     background-color: var(--colour-dark-accent);
     color: #ffffff;
 }
+
+p {
+    font: 400 18px Montserrat;
+}
+
+a {
+    font: 400 18px Montserrat;
+}
+
+h3 {
+    font: 400 28px JetBrains Mono;
+    margin: 0;
+}
