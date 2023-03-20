@@ -25,3 +25,5 @@ dist-ssr
 
 # Config file
 config.json
+# Local Netlify folder
+.netlify
