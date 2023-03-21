@@ -1,4 +1,3 @@
-import config from './config.json' assert { type: 'json' };
 import axios from 'axios';
 import $ from "jquery";
 import emailjs from '@emailjs/browser';
@@ -11,7 +10,7 @@ import emailjs from '@emailjs/browser';
 
 const getData = async () => {
     try {
-        const res = await axios.get(config["API_URL"]);
+        const res = await axios.get(import.meta.env.VITE_API_URL);
 
         // let years_coding = new Date().getFullYear() - 2016;
 
@@ -149,7 +148,7 @@ document.forms.contact_form.onsubmit = function () {
     }
     console.log(templateParams);
     return false;
-    emailjs.send(config["EMAILJS_SERVICE_ID"], config["EMAILJS_TEMPLATE_ID"], templateParams, config["EMAILJS_PUBLIC_KEY"])
+    emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
 	    .then((response) => {
 	        console.log('SUCCESS!', response.status, response.text);
 	    }, (err) => {
