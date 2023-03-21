@@ -1,5 +1,3 @@
-import emailjs from '@emailjs/browser';
-
 /**
  * DATA FETCHING
  */
