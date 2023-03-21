@@ -1,8 +1,4 @@
-import axios from 'axios';
-import $ from "jquery";
 import emailjs from '@emailjs/browser';
-
-// TODO: Change HTTP requests to use Jquery
 
 /**
  * DATA FETCHING
@@ -10,43 +6,58 @@ import emailjs from '@emailjs/browser';
 
 const getData = async () => {
     try {
-        const res = await axios.get(import.meta.env.VITE_API_URL);
 
-        // let years_coding = new Date().getFullYear() - 2016;
+        let ret;
 
-        // $("#years").get(0).style.setProperty('--tonum', years_coding)
+        await $.ajax({
+            url: "http://data.kessas.com.s3-website-ap-southeast-2.amazonaws.com/data.json",
+            type: 'get',
+            dataType: 'html',
+            // async: false,
+            success: (data) => {
+                
+                data = JSON.parse(data);
 
-        $("#rep").get(0).style.setProperty('--tonum', res.data.stats.reputation)
+                // let years_coding = new Date().getFullYear() - 2016;
 
-        $("#repos").get(0).style.setProperty('--tonum', res.data.stats.repos.repoCount)
+                // $("#years").get(0).style.setProperty('--tonum', years_coding)
 
-        $("#hours").get(0).style.setProperty('--tonum', res.data.stats.time.minutes >= 30 ? res.data.stats.time.hours + 1 : res.data.stats.time.hours);
+                $("#rep").get(0).style.setProperty('--tonum', data.stats.reputation)
 
-        const langsSection = $("#langs").get(0);
+                $("#repos").get(0).style.setProperty('--tonum', data.stats.repos.repoCount)
 
-        let langs = Object.keys(res.data.stats.repos.languages).map((key) => [key, res.data.stats.repos.languages[key]]);
-        langs.sort((first, second) => second[1] - first[1]);
+                $("#hours").get(0).style.setProperty('--tonum', data.stats.time.minutes >= 30 ? data.stats.time.hours + 1 : data.stats.time.hours);
 
-        let elems = [];
-        let lengths = [];
-        let i = 1;
-        for (let lang of langs) {
-            if (lang[1] > 2) {
-                langsSection.innerHTML += `
-                <div class="lang">
-                    <div class="lang-label">${lang[0]}</div>
-                    <div class="lang-box-full">
-                        <div class="lang-box" id="lang-box-${i}">
-                            <div class="lang-box-percent">${Math.round(lang[1])}%</div>
-                        </div>
-                    </div>
-                </div>`
-                elems.push(i);
-                lengths.push(lang[1]);
-                i++
+                const langsSection = $("#langs").get(0);
+
+                let langs = Object.keys(data.stats.repos.languages).map((key) => [key, data.stats.repos.languages[key]]);
+                langs.sort((first, second) => second[1] - first[1]);
+
+                let elems = [];
+                let lengths = [];
+                let i = 1;
+                 for (let lang of langs) {
+                    if (lang[1] > 2) {
+                        langsSection.innerHTML += `
+                        <div class="lang">
+                            <div class="lang-label">${lang[0]}</div>
+                            <div class="lang-box-full">
+                                <div class="lang-box" id="lang-box-${i}">
+                                    <div class="lang-box-percent">${Math.round(lang[1])}%</div>
+                                </div>
+                            </div>
+                        </div>`
+                        elems.push(i);
+                        lengths.push(lang[1]);
+                        i++;
+                    }
+                }
+
+                ret = [elems, lengths];
             }
-        }
-        return [elems, lengths];
+        });
+
+        return ret;
 
     } catch (error) {
         console.log(`ERROR: ${error.message}`)
@@ -59,6 +70,7 @@ const getData = async () => {
  */
 
 (async () => {
+
 let [elems, lengths] = await getData();
 
 let bar_options = {
@@ -69,7 +81,7 @@ let bar_options = {
 let bar_observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            for (let i of elems) {
+            for (let i of elems) { 
                 if (lengths[i - 1] > 4) {
                     $(`#lang-box-${i}`).get(0).style.width = `${lengths[i - 1] * 2}%`;
                 } else {
@@ -150,7 +162,7 @@ document.forms.contact_form.onsubmit = function () {
     return false;
     emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
 	    .then((response) => {
-	        console.log('SUCCESS!', response.status, response.text);
+	        console.log('SUCCESS!',dataponse.status,dataponse.text);
 	    }, (err) => {
 	        console.log('FAILED...', err);
         })
