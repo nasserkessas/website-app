@@ -1,7 +1,7 @@
 import config from './config.json' assert { type: 'json' };
-import emailjs from '@emailjs/browser';
 import axios from 'axios';
 import $ from "jquery";
+import emailjs from '@emailjs/browser';
 
 // TODO: Change HTTP requests to use Jquery
 
@@ -59,6 +59,7 @@ const getData = async () => {
  * LANGUAGE BAR OBSERVERS
  */
 
+(async () => {
 let [elems, lengths] = await getData();
 
 let bar_options = {
@@ -82,7 +83,7 @@ let bar_observer = new IntersectionObserver((entries, observer) => {
 }, bar_options);
 
 bar_observer.observe($(`#langs`).get(0));
-
+})();
 
 /**
  * STAT COUNTER OBSERVERS
