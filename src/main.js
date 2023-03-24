@@ -8,7 +8,7 @@ const getData = async () => {
         let ret;
 
         await $.ajax({
-            url: "http://data.kessas.com.s3-website-ap-southeast-2.amazonaws.com/data.json",
+            url: "https://d1kdobc1pbggf5.cloudfront.net/data.json",
             type: 'get',
             dataType: 'html',
             // async: false,
